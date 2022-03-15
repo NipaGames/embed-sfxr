@@ -1,0 +1,2 @@
+@echo off
+g++ -shared sfxr.cpp -L lib -I include -o bin/SFXR.dll -D DLL_BUILD -l mingw32 -l SDL2main -l SDL2 -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic || echo Compilation failed!
