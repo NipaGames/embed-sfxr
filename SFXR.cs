@@ -1,8 +1,4 @@
-﻿// C# wrapper for embed SFXR
-
-// marshalling is pain
-
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 
 public class SFXR {
@@ -53,7 +49,7 @@ public class SFXR {
     public static extern void Quit();
 
     [DllImport("SFXR.dll", EntryPoint = "SFXR_Mutate")]
-    public static extern void Mutate(ref Sample s, float f);
+    public static extern void Mutate(Sample s, float f); 
 
     [DllImport("SFXR.dll", EntryPoint = "SFXR_GenerateRandomSample")]
     public static extern IntPtr GenerateRandomSamplePtr();
@@ -67,7 +63,7 @@ public class SFXR {
     public static extern void PlaySample(Sample s);
 
     [DllImport("SFXR.dll", EntryPoint = "SFXR_ResetSample")]
-    public static extern void ResetSample(ref Sample s);
+    public static extern void ResetSample(Sample s);
 
     [DllImport("SFXR.dll", EntryPoint = "SFXR_StopPlaying")]
     [Obsolete]
